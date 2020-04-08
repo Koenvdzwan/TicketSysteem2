@@ -17,12 +17,12 @@ namespace TicketSysteem.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Applicatie>()
-                .HasOne(x => x.Beheerder);
-            modelBuilder.Entity<Ticket>()
-                .HasOne(x => x.Klant);
-            modelBuilder.Entity<Ticket>()
-                .HasOne(x => x.Status);
+            modelBuilder.Entity<Status>()
+                .HasData(
+                    new Status() {Id = -1, Volgorde = 100, Naam = "Nieuw"},
+                    new Status() {Id = -2, Volgorde = 200, Naam = "In behandeling"},
+                    new Status() {Id = -3, Volgorde = 300, Naam = "Afgehandeld"}
+                    );
         }
 
         public DbSet<Gebruiker> Gebruikerers { get; set; }

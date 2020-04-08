@@ -7,7 +7,7 @@ namespace TicketSysteem.Models
 {
     public class Medewerker : Gebruiker
     {
-        public Applicatie Applicatie { get; set; }
+        public ICollection<Applicatie>  Applicaties { get; set; }
 
     }
 }

@@ -7,6 +7,6 @@ namespace TicketSysteem.Models
 {
     public class Klant : Gebruiker
     {
-        public Ticket Ticket { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
     }
 }
